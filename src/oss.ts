@@ -36,6 +36,9 @@ class SimpleOSS {
    */
   set(target: any, name: string) {
     try {
+      if (typeof target == null) {
+        return;
+      }
       const serialized_data = JSON.stringify(target, null, 2);
       fs.writeFileSync(this.generateStoragePath(name), serialized_data, {
         flag: "w",
@@ -78,7 +81,7 @@ class SimpleOSS {
    * To remove the object from storage.
    * @param name The name of the object.
    */
-  delete(name: string) {
+  del(name: string) {
     const storage_path = this.generateStoragePath(name);
     if (this.exist(name)) fs.unlinkSync(storage_path);
   }
@@ -86,8 +89,8 @@ class SimpleOSS {
 
 /**
  * To create an TinyOSS instance with specified storage directory.
- * @param {string} storageDir
- * @return {*}  {TinyOSS}
+ * @param storageDir
+ * @return {TinyOSS}
  */
 function createSimpleOSS(storageDir: string): SimpleOSS {
   return new SimpleOSS(storageDir);
