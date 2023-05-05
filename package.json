@@ -1,0 +1,16 @@
+{
+  "name": "simple-oss",
+  "version": "0.1.0",
+  "description": "The simple OSS (Object Storage Service) for nodejs",
+  "main": "./dist",
+  "scripts": {
+    "build:mjs": "tsc -p tsconfig.mjs.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build":"npm run build:mjs && npm run build:cjs"
+  },
+  "author": "PrinOrange",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^18.16.3"
+  }
+}
