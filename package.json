@@ -6,11 +6,20 @@
   "scripts": {
     "build:mjs": "tsc -p tsconfig.mjs.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build":"npm run build:mjs && npm run build:cjs"
+    "build": "npm run build:mjs && npm run build:cjs"
   },
   "author": "PrinOrange",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/PrinOrange/simple-oss"
+  },
   "dependencies": {
     "@types/node": "^18.16.3"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "oss",
+    "nodejs"
+  ]
 }
